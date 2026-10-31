@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>NontonApa? - Film Sesuai Mood</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">🎬 Nonton<span>Apa?</span></div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#quiz">Cari Film</a>
+        <a href="#about">Tentang</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="badge">🍿 BINGUNG MAU NONTON APA?</div>
+
+        <h1>
+          Film yang pas buat
+          <span>mood lu sekarang.</span>
+        </h1>
+
+        <p>
+          Pilih suasana hati lu. NontonApa? bakal bantu nyari film Netflix
+          Indonesia yang cocok buat nemenin malam lu.
+        </p>
+
+        <a href="#quiz" class="primary-btn"> Cari Film Buat Gue → </a>
+      </div>
+
+      <div class="hero-art">🎬</div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="quiz-section" id="quiz">
+      <div class="section-heading">
+        <span>MOOD CHECK</span>
+
+        <h2>Malam ini lu pengen nonton apa?</h2>
+
+        <p>Jawab 3 pertanyaan dan biar kami yang milihin.</p>
+      </div>
+
+      <div class="quiz-box">
+        <!-- QUESTION 1 -->
+        <div class="question">
+          <h3>1. Mood lu sekarang?</h3>
+
+          <div class="option-grid">
+            <button class="option" data-group="mood" data-value="happy">
+              <b>😂</b>
+              Pengen Ketawa
+            </button>
+
+            <button class="option" data-group="mood" data-value="sad">
+              <b>😢</b>
+              Lagi Sedih
+            </button>
+
+            <button class="option" data-group="mood" data-value="romantic">
+              <b>🥰</b>
+              Lagi Bucin
+            </button>
+
+            <button class="option" data-group="mood" data-value="scared">
+              <b>😱</b>
+              Deg-degan
+            </button>
+
+            <button class="option" data-group="mood" data-value="thinking">
+              <b>🤯</b>
+              Pengen Mikir
+            </button>
+
+            <button class="option" data-group="mood" data-value="action">
+              <b>🔥</b>
+              Pengen Seru
+            </button>
+
+            <button class="option" data-group="mood" data-value="chill">
+              <b>😌</b>
+              Pengen Santai
+            </button>
+
+            <button class="option" data-group="mood" data-value="adventure">
+              <b>🌎</b>
+              Petualangan
+            </button>
+          </div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="question">
+          <h3>2. Lu nonton sama siapa?</h3>
+
+          <div class="option-grid watch-grid">
+            <button class="option" data-group="watch" data-value="alone">
+              <b>👤</b>
+              Sendiri
+            </button>
+
+            <button class="option" data-group="watch" data-value="partner">
+              <b>❤️</b>
+              Pasangan
+            </button>
+
+            <button class="option" data-group="watch" data-value="friends">
+              <b>👥</b>
+              Teman
+            </button>
+
+            <button class="option" data-group="watch" data-value="family">
+              <b>👨‍👩‍👧</b>
+              Keluarga
+            </button>
+          </div>
+        </div>
+
+        <!-- QUESTION 3 -->
+        <div class="question">
+          <h3>3. Mau film yang seberapa berat?</h3>
+
+          <div class="option-grid level-grid">
+            <button class="option" data-group="level" data-value="light">
+              <b>☁️</b>
+              Ringan
+            </button>
+
+            <button class="option" data-group="level" data-value="medium">
+              <b>🍿</b>
+              Sedang
+            </button>
+
+            <button class="option" data-group="level" data-value="heavy">
+              <b>🧠</b>
+              Berat
+            </button>
+          </div>
+        </div>
+
+        <button id="searchBtn" class="search-btn">✨ Cari Film Buat Gue</button>
+
+        <p id="message"></p>
+      </div>
+    </section>
+
+    <!-- LOADING -->
+    <section id="loading" class="loading">
+      <div class="loader"></div>
+
+      <h3>Lagi nyari film...</h3>
+
+      <p>Tunggu sebentar, lagi bongkar katalog 🍿</p>
+    </section>
+
+    <!-- RESULT -->
+    <section class="result-section" id="result">
+      <div class="section-heading">
+        <span>REKOMENDASI BUAT LU</span>
+
+        <h2>🍿 Film buat malam ini</h2>
+
+        <p>Berdasarkan mood yang tadi lu pilih.</p>
+      </div>
+
+      <div id="movieContainer" class="movie-grid"></div>
+
+      <button id="loadMoreBtn" class="load-more">🔄 Kasih Film Lain</button>
+    </section>
+
+    <!-- MODAL DETAIL -->
+    <div class="modal" id="movieModal">
+      <div class="modal-content">
+        <button id="closeModal" class="close">×</button>
+
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <h2>🎬 NontonApa?</h2>
+
+      <p>
+        Kadang milih film lebih lama daripada nontonnya. Makanya website ini
+        dibuat buat bantu lu nyari tontonan berdasarkan mood.
+      </p>
+
+      <small>
+        This product uses the TMDB API but is not endorsed or certified by TMDB.
+      </small>
+    </section>
+
+    <footer>
+      <p>🎬 NontonApa? • Your mood. Your movie.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
